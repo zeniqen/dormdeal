@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, BadgeIndianRupee, Check, CircleDollarSign, GraduationCap, Leaf, Recycle, ShieldCheck, ShoppingBag, Sparkles, Users } from "lucide-react";
+import { ArrowRight, BadgeIndianRupee, Check, CircleDollarSign, GraduationCap, Leaf, Recycle, ShieldCheck, ShoppingBag, Sparkles, Users, type LucideIcon } from "lucide-react";
 import { AiListingGenerator } from "@/components/ai-listing-generator";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { ProductCard } from "@/components/product-card";
@@ -21,6 +21,18 @@ const whyCards = [
   { title: "Save Money", body: "Find quality products at student-friendly prices.", icon: CircleDollarSign, color: "text-emerald-600 bg-emerald-50" },
   { title: "Reduce Waste", body: "Give useful items a second life.", icon: Recycle, color: "text-sky-600 bg-sky-50" },
   { title: "Support Students", body: "Buy directly from fellow students.", icon: Users, color: "text-amber-600 bg-amber-50" }
+];
+
+const impactStats: Array<{
+  prefix: string;
+  value: number;
+  suffix: string;
+  label: string;
+  icon: LucideIcon;
+}> = [
+  { prefix: "₹", value: 250000, suffix: "+", label: "Student Savings", icon: BadgeIndianRupee },
+  { prefix: "", value: 1500, suffix: "+", label: "Items Reused", icon: Recycle },
+  { prefix: "", value: 850, suffix: "kg", label: "Waste Prevented", icon: Leaf }
 ];
 
 function SkeletonGrid() {
@@ -61,11 +73,11 @@ export function HomePage() {
             Find affordable textbooks, gadgets, and student essentials from people around you.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="#products" className="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 font-black text-white shadow-xl shadow-slate-900/10 transition hover:-translate-y-1 hover:bg-emerald-600 dark:bg-white dark:text-slate-950">
+            <Link href="/browse" className="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 font-black text-white shadow-xl shadow-slate-900/10 transition hover:-translate-y-1 hover:bg-emerald-600 dark:bg-white dark:text-slate-950">
               Browse Deals
               <ArrowRight className="h-5 w-5" />
             </Link>
-            <Link href="#sell" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-6 py-4 font-black text-slate-950 shadow-sm transition hover:-translate-y-1 hover:border-emerald-300 dark:border-slate-800 dark:bg-slate-950 dark:text-white">
+            <Link href="/sell" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-6 py-4 font-black text-slate-950 shadow-sm transition hover:-translate-y-1 hover:border-emerald-300 dark:border-slate-800 dark:bg-slate-950 dark:text-white">
               Sell an Item
               <Sparkles className="h-5 w-5 text-amber-500" />
             </Link>
@@ -180,18 +192,13 @@ export function HomePage() {
               <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">Sustainability impact dashboard</h2>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
-              {[
-                ["₹", 250000, "+", "Student Savings", BadgeIndianRupee],
-                ["", 1500, "+", "Items Reused", Recycle],
-                ["", 850, "kg", "Waste Prevented", Leaf]
-              ].map(([prefix, value, suffix, label, Icon]) => (
-                <div key={String(label)} className="rounded-2xl bg-white/10 p-5">
-                  {/* @ts-expect-error icon tuple keeps this section compact */}
-                  <Icon className="mb-4 h-6 w-6 text-amber-300" />
+              {impactStats.map((stat) => (
+                <div key={stat.label} className="rounded-2xl bg-white/10 p-5">
+                  <stat.icon className="mb-4 h-6 w-6 text-amber-300" />
                   <p className="text-2xl font-black">
-                    <AnimatedCounter value={Number(value)} prefix={String(prefix)} suffix={String(suffix)} compact />
+                    <AnimatedCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} compact />
                   </p>
-                  <p className="mt-1 text-sm text-slate-300">{String(label)}</p>
+                  <p className="mt-1 text-sm text-slate-300">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -228,7 +235,7 @@ export function HomePage() {
           </div>
           <h2 className="mx-auto max-w-3xl text-3xl font-black tracking-tight text-slate-950 sm:text-5xl dark:text-white">Every Purchase Makes Campus More Sustainable</h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">Help build a circular student economy where valuable items find a second life.</p>
-          <Link href="#products" className="mt-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-6 py-4 font-black text-slate-950 transition hover:-translate-y-1 hover:bg-amber-400">
+          <Link href="/browse" className="mt-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-6 py-4 font-black text-slate-950 transition hover:-translate-y-1 hover:bg-amber-400">
             Start Saving Today
             <ShoppingBag className="h-5 w-5" />
           </Link>

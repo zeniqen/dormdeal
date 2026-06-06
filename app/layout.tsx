@@ -4,7 +4,11 @@ import { ClientShell } from "@/components/client-shell";
 
 export const metadata: Metadata = {
   title: "DormDeal | Buy Used. Save More. Waste Less.",
-  description: "A student-focused marketplace for textbooks, electronics, notes, and hostel essentials."
+  description: "A student-focused marketplace for textbooks, electronics, notes, and hostel essentials.",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.svg"
+  }
 };
 
 export default function RootLayout({

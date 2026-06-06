@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Leaf, Menu, Moon, Search, ShoppingBag, Sun, X } from "lucide-react";
@@ -9,15 +10,44 @@ import { CartDrawer } from "@/components/cart-drawer";
 import { useCartStore } from "@/lib/cart-store";
 
 const navItems = [
-  { label: "Browse", href: "/#products" },
-  { label: "Categories", href: "/#categories" },
-  { label: "Sell Item", href: "/#sell" },
-  { label: "About", href: "/#about" }
+  { label: "Browse", href: "/browse" },
+  { label: "Sell Item", href: "/sell" },
+  { label: "About", href: "/about" }
+];
+
+const footerGroups = [
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Campus Partners", href: "/campus-partners" },
+      { label: "Careers", href: "/careers" }
+    ]
+  },
+  {
+    title: "Categories",
+    links: [
+      { label: "Books", href: "/categories/books" },
+      { label: "Electronics", href: "/categories/electronics" },
+      { label: "Hostel Essentials", href: "/categories/hostel-essentials" }
+    ]
+  },
+  {
+    title: "Contact",
+    links: [
+      { label: "hello@dormdeal.in", href: "/contact" },
+      { label: "Instagram", href: "/social/instagram" },
+      { label: "LinkedIn", href: "/social/linkedin" }
+    ]
+  }
 ];
 
 export function ClientShell({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const [dark, setDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [mobileSearchQuery, setMobileSearchQuery] = useState("");
   const openCart = useCartStore((state) => state.openCart);
   const cartCount = useCartStore((state) => state.items.reduce((sum, item) => sum + item.quantity, 0));
   const impact = useMemo(() => Math.max(24, cartCount * 6 + 24), [cartCount]);
@@ -25,6 +55,19 @@ export function ClientShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
+
+  function submitSearch(query: string) {
+    const nextQuery = query.trim();
+
+    if (!nextQuery) {
+      router.push("/browse");
+      setMenuOpen(false);
+      return;
+    }
+
+    router.push(`/browse?q=${encodeURIComponent(nextQuery)}`);
+    setMenuOpen(false);
+  }
 
   return (
     <>
@@ -45,10 +88,21 @@ export function ClientShell({ children }: { children: React.ReactNode }) {
             ))}
           </div>
 
-          <div className="ml-auto hidden min-w-64 max-w-sm flex-1 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm md:flex dark:border-slate-800 dark:bg-slate-950">
+          <form
+            className="ml-auto hidden min-w-64 max-w-sm flex-1 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm md:flex dark:border-slate-800 dark:bg-slate-950"
+            onSubmit={(event) => {
+              event.preventDefault();
+              submitSearch(searchQuery);
+            }}
+          >
             <Search className="h-4 w-4 text-slate-400" />
-            <input className="w-full bg-transparent text-sm outline-none placeholder:text-slate-400" placeholder="Search books, gadgets, notes..." />
-          </div>
+            <input
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              className="w-full bg-transparent text-sm outline-none placeholder:text-slate-400"
+              placeholder="Search books, gadgets, notes..."
+            />
+          </form>
 
           <div className="hidden items-center gap-2 xl:flex">
             <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-2 text-xs font-black text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
@@ -95,10 +149,21 @@ export function ClientShell({ children }: { children: React.ReactNode }) {
                     <X className="h-5 w-5" />
                   </button>
                 </div>
-                <div className="mt-5 flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 dark:border-slate-800">
+                <form
+                  className="mt-5 flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 dark:border-slate-800"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    submitSearch(mobileSearchQuery);
+                  }}
+                >
                   <Search className="h-4 w-4 text-slate-400" />
-                  <input className="w-full bg-transparent text-sm outline-none" placeholder="Search DormDeal" />
-                </div>
+                  <input
+                    value={mobileSearchQuery}
+                    onChange={(event) => setMobileSearchQuery(event.target.value)}
+                    className="w-full bg-transparent text-sm outline-none"
+                    placeholder="Search DormDeal"
+                  />
+                </form>
                 <div className="mt-6 grid gap-2">
                   {navItems.map((item) => (
                     <Link key={item.label} href={item.href} className="rounded-2xl px-4 py-3 font-bold hover:bg-slate-100 dark:hover:bg-slate-900" onClick={() => setMenuOpen(false)}>
@@ -123,18 +188,14 @@ export function ClientShell({ children }: { children: React.ReactNode }) {
             </div>
             <p className="mt-3 text-sm leading-6 text-slate-500">Buy Used. Save More. Waste Less.</p>
           </div>
-          {[
-            ["Company", "About", "Campus Partners", "Careers"],
-            ["Categories", "Books", "Electronics", "Hostel Essentials"],
-            ["Contact", "hello@dormdeal.in", "Instagram", "LinkedIn"]
-          ].map(([title, ...links]) => (
-            <div key={title}>
-              <h3 className="font-black text-slate-950 dark:text-white">{title}</h3>
+          {footerGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="font-black text-slate-950 dark:text-white">{group.title}</h3>
               <div className="mt-3 grid gap-2 text-sm text-slate-500">
-                {links.map((link) => (
-                  <a key={link} href="#" className="transition hover:text-emerald-600">
-                    {link}
-                  </a>
+                {group.links.map((link) => (
+                  <Link key={link.href} href={link.href} className="transition hover:text-emerald-600">
+                    {link.label}
+                  </Link>
                 ))}
               </div>
             </div>

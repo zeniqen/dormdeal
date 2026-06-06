@@ -17,20 +17,24 @@ Students often buy expensive items for one semester, one course, or one hostel y
 ## Live Demo Flow For Judges
 
 1. Open the homepage and review the startup-style hero, stats, categories, and sustainability story.
-2. Scroll to **Featured Products** and add a product to the cart.
-3. Open the cart drawer, adjust quantity, remove items, and review the total.
+2. Visit `/browse` to filter and search mock student listings.
+3. Add a product to the cart, then adjust quantity, remove items, and review the total in the cart drawer.
 4. Click a product card to view the product details page.
-5. Try the **AI Listing Generator**:
+5. Visit `/sell` and try the manual mock listing form.
+6. Try the **AI Listing Generator**:
    - Upload any product image.
    - Click **Generate Listing**.
    - Review the mock AI-generated title, description, price, and sustainability estimate.
-6. Toggle dark mode and resize the browser to see the responsive mobile experience.
+7. Visit `/about` to review the mission, impact story, and circular campus economy positioning.
+8. Toggle dark mode and resize the browser to see the responsive mobile experience.
 
 ## Key Features
 
 - Premium responsive e-commerce landing experience
-- Student marketplace product grid with 12 realistic mock listings
+- Student marketplace product grid with 30 realistic mock listings
 - Product detail pages with gallery, seller rating, condition, savings, and sustainability indicators
+- Dedicated Browse, Sell Item, and About pages connected through the navbar
+- Footer links connected to real company, category, contact, and social placeholder pages
 - Slide-out cart drawer powered by Zustand
 - Quantity controls, remove item, total price, checkout simulation, and empty cart state
 - AI Listing Generator mock workflow
@@ -75,6 +79,10 @@ app/
   layout.tsx                 Global app shell
   page.tsx                   Homepage entry
   globals.css                Tailwind and global styles
+  about/page.tsx             About page
+  browse/page.tsx            Browse marketplace page
+  sell/page.tsx              Sell item page
+  categories/[slug]/page.tsx Category-specific marketplace pages
   products/[slug]/page.tsx   Product details route
 
 components/

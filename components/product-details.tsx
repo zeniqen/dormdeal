@@ -23,7 +23,7 @@ export function ProductDetails({ product }: { product: Product }) {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <Link href="/#products" className="mb-8 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-600 shadow-sm transition hover:text-emerald-600 dark:bg-slate-950 dark:text-slate-300">
+      <Link href="/browse" className="mb-8 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-600 shadow-sm transition hover:text-emerald-600 dark:bg-slate-950 dark:text-slate-300">
         <ArrowLeft className="h-4 w-4" />
         Back to deals
       </Link>

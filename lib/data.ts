@@ -252,6 +252,330 @@ export const products: Product[] = [
     rating: 4.7,
     reusedKg: 0.5,
     description: "20,000mAh power bank with dual USB output and reliable backup for long campus days."
+  },
+  {
+    id: "p13",
+    slug: "data-structures-textbook",
+    name: "Data Structures Textbook",
+    category: "Books",
+    image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 1199,
+    price: 549,
+    condition: "Good",
+    seller: "Tanay J.",
+    rating: 4.6,
+    reusedKg: 1.1,
+    description: "Core CS textbook with clean pages, algorithm notes, and important sections bookmarked."
+  },
+  {
+    id: "p14",
+    slug: "physics-lab-manual",
+    name: "Physics Lab Manual",
+    category: "Books",
+    image: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 650,
+    price: 219,
+    condition: "Fair",
+    seller: "Ritika N.",
+    rating: 4.3,
+    reusedKg: 0.8,
+    description: "Usable lab manual with experiment tables, diagrams, and a few highlighted observations."
+  },
+  {
+    id: "p15",
+    slug: "financial-accounting-guide",
+    name: "Financial Accounting Guide",
+    category: "Books",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 999,
+    price: 399,
+    condition: "Like New",
+    seller: "Mihir C.",
+    rating: 4.8,
+    reusedKg: 1,
+    description: "Commerce guide with solved examples, ledger formats, and exam-style practice sets."
+  },
+  {
+    id: "p16",
+    slug: "graphing-calculator-ti-84",
+    name: "Graphing Calculator TI-84",
+    category: "Calculators",
+    image: "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1757256137041-0aab889db199?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 8499,
+    price: 4299,
+    condition: "Good",
+    seller: "Kunal W.",
+    rating: 4.7,
+    reusedKg: 0.5,
+    description: "Graphing calculator for advanced math courses with clear screen and responsive keypad."
+  },
+  {
+    id: "p17",
+    slug: "basic-casio-calculator",
+    name: "Basic Casio Calculator",
+    category: "Calculators",
+    image: "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1757256137041-0aab889db199?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 499,
+    price: 199,
+    condition: "Good",
+    seller: "Sia H.",
+    rating: 4.4,
+    reusedKg: 0.2,
+    description: "Simple calculator for commerce and quick daily calculations. Battery recently replaced."
+  },
+  {
+    id: "p18",
+    slug: "wireless-mouse",
+    name: "Wireless Mouse",
+    category: "Electronics",
+    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 1299,
+    price: 599,
+    condition: "Like New",
+    seller: "Yash M.",
+    rating: 4.7,
+    reusedKg: 0.25,
+    description: "Quiet wireless mouse with USB receiver, smooth scroll wheel, and strong battery life."
+  },
+  {
+    id: "p19",
+    slug: "bluetooth-speaker-mini",
+    name: "Mini Bluetooth Speaker",
+    category: "Electronics",
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 2499,
+    price: 1099,
+    condition: "Good",
+    seller: "Neil A.",
+    rating: 4.5,
+    reusedKg: 0.6,
+    description: "Portable speaker for hostel rooms, club events, and small study breaks. Charging cable included."
+  },
+  {
+    id: "p20",
+    slug: "laptop-stand-foldable",
+    name: "Foldable Laptop Stand",
+    category: "Accessories",
+    image: "https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 1599,
+    price: 749,
+    condition: "Like New",
+    seller: "Avni S.",
+    rating: 4.8,
+    reusedKg: 0.8,
+    description: "Aluminium foldable laptop stand with adjustable height for better desk posture."
+  },
+  {
+    id: "p21",
+    slug: "steel-water-bottle",
+    name: "Steel Water Bottle",
+    category: "Accessories",
+    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 899,
+    price: 349,
+    condition: "Good",
+    seller: "Diya F.",
+    rating: 4.6,
+    reusedKg: 0.4,
+    description: "Insulated steel bottle with minor exterior marks and excellent temperature retention."
+  },
+  {
+    id: "p22",
+    slug: "geometry-drafting-set",
+    name: "Geometry Drafting Set",
+    category: "Accessories",
+    image: "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 1199,
+    price: 499,
+    condition: "Good",
+    seller: "Harsh P.",
+    rating: 4.5,
+    reusedKg: 0.35,
+    description: "Drafting tools for engineering drawing: scale, compass, set squares, and storage case."
+  },
+  {
+    id: "p23",
+    slug: "hostel-bedside-organizer",
+    name: "Hostel Bedside Organizer",
+    category: "Hostel Essentials",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 899,
+    price: 379,
+    condition: "Good",
+    seller: "Pooja E.",
+    rating: 4.6,
+    reusedKg: 0.7,
+    description: "Hanging organizer for phone, charger, notebooks, and small bedside essentials."
+  },
+  {
+    id: "p24",
+    slug: "folding-laundry-basket",
+    name: "Folding Laundry Basket",
+    category: "Hostel Essentials",
+    image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 799,
+    price: 299,
+    condition: "Fair",
+    seller: "Laksh B.",
+    rating: 4.2,
+    reusedKg: 0.9,
+    description: "Lightweight collapsible laundry basket with sturdy handles and plenty of hostel-life mileage left."
+  },
+  {
+    id: "p25",
+    slug: "mini-table-fan",
+    name: "Mini Table Fan",
+    category: "Hostel Essentials",
+    image: "https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 1499,
+    price: 699,
+    condition: "Good",
+    seller: "Aditya Q.",
+    rating: 4.5,
+    reusedKg: 1.1,
+    description: "Compact table fan for hostel desks with two speed settings and stable base."
+  },
+  {
+    id: "p26",
+    slug: "microeconomics-notes",
+    name: "Microeconomics Notes",
+    category: "Notes",
+    image: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 699,
+    price: 199,
+    condition: "Like New",
+    seller: "Gayatri U.",
+    rating: 4.9,
+    reusedKg: 0.45,
+    description: "Concise notes with diagrams, demand-supply graphs, and quick revision summaries."
+  },
+  {
+    id: "p27",
+    slug: "dbms-handwritten-notes",
+    name: "DBMS Handwritten Notes",
+    category: "Notes",
+    image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 899,
+    price: 299,
+    condition: "Good",
+    seller: "Raghav I.",
+    rating: 4.7,
+    reusedKg: 0.5,
+    description: "Database notes covering ER diagrams, normalization, SQL queries, and transaction concepts."
+  },
+  {
+    id: "p28",
+    slug: "aptitude-placement-notes",
+    name: "Aptitude Placement Notes",
+    category: "Notes",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 999,
+    price: 349,
+    condition: "Good",
+    seller: "Palak D.",
+    rating: 4.8,
+    reusedKg: 0.55,
+    description: "Placement prep notes with shortcuts, solved questions, and topic-wise practice sheets."
+  },
+  {
+    id: "p29",
+    slug: "usb-powered-desk-hub",
+    name: "USB Powered Desk Hub",
+    category: "Electronics",
+    image: "https://images.unsplash.com/photo-1616578273578-4a9b9070cc04?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1616578273578-4a9b9070cc04?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 1899,
+    price: 899,
+    condition: "Open Box",
+    seller: "Ojas V.",
+    rating: 4.6,
+    reusedKg: 0.35,
+    description: "Four-port USB hub for laptop desks, keyboards, mice, and storage drives."
+  },
+  {
+    id: "p30",
+    slug: "clip-on-book-light",
+    name: "Clip-on Book Light",
+    category: "Hostel Essentials",
+    image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    originalPrice: 699,
+    price: 279,
+    condition: "Like New",
+    seller: "Tara Z.",
+    rating: 4.8,
+    reusedKg: 0.25,
+    description: "Rechargeable clip-on reading light for late-night study without waking roommates."
   }
 ];
 
@@ -259,4 +583,16 @@ export const quickIcons = { Keyboard, Headphones, Plug, Shirt };
 
 export function getProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug);
+}
+
+export function slugifyCategory(category: string) {
+  return category.toLowerCase().replaceAll(" ", "-");
+}
+
+export function getCategoryBySlug(slug: string) {
+  return categories.find((category) => slugifyCategory(category.name) === slug);
+}
+
+export function getProductsByCategory(category: string) {
+  return products.filter((product) => product.category === category);
 }
